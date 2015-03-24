@@ -72,7 +72,7 @@ public class TestHands {
 	}
 
 	@Test
-	public final void TestRoyalFlushJoker() {
+	public final void TestFiveJokers() {
 
 		ArrayList<Card> rfHand = new ArrayList<Card>();
 		rfHand.add(new Card(eSuit.JOKER, eRank.JOKER));
@@ -81,10 +81,9 @@ public class TestHands {
 		rfHand.add(new Card(eSuit.JOKER, eRank.JOKER));
 		rfHand.add(new Card(eSuit.JOKER, eRank.JOKER));
 		Hand h = Hand.EvalHand(rfHand);
-		
 
-		assertEquals("Should be a Royal Flush:",
-				eHandStrength.RoyalFlush.getHandStrength(), h.getHandStrength());
+		assertEquals("Should be a Five of a Kind:",
+				eHandStrength.FiveOfAKind.getHandStrength(), h.getHandStrength());
 
 	}
 
@@ -135,7 +134,7 @@ public class TestHands {
 				eHandStrength.FourOfAKind.getHandStrength(),
 				h.getHandStrength());
 	}
-	
+
 	@Test
 	public final void TestFourOfAKind2() {
 
@@ -166,7 +165,7 @@ public class TestHands {
 		assertEquals("Should be a Full House:",
 				eHandStrength.FullHouse.getHandStrength(), h.getHandStrength());
 	}
-	
+
 	@Test
 	public final void TestFullHouse2() {
 
@@ -227,7 +226,7 @@ public class TestHands {
 				eHandStrength.ThreeOfAKind.getHandStrength(),
 				h.getHandStrength());
 	}
-	
+
 	@Test
 	public final void TestThreeOfAKind2() {
 
@@ -243,7 +242,7 @@ public class TestHands {
 				eHandStrength.ThreeOfAKind.getHandStrength(),
 				h.getHandStrength());
 	}
-	
+
 	@Test
 	public final void TestThreeOfAKind3() {
 
@@ -252,22 +251,6 @@ public class TestHands {
 		rfHand.add(new Card(eSuit.HEARTS, eRank.FIVE));
 		rfHand.add(new Card(eSuit.DIAMONDS, eRank.TWO));
 		rfHand.add(new Card(eSuit.CLUBS, eRank.KING));
-		rfHand.add(new Card(eSuit.SPADES, eRank.FIVE));
-		Hand h = Hand.EvalHand(rfHand);
-
-		assertEquals("Should be a Three of a Kind:",
-				eHandStrength.ThreeOfAKind.getHandStrength(),
-				h.getHandStrength());
-	}
-
-	@Test
-	public final void TestThreeOfAKindJoker() {
-
-		ArrayList<Card> rfHand = new ArrayList<Card>();
-		rfHand.add(new Card(eSuit.CLUBS, eRank.SEVEN));
-		rfHand.add(new Card(eSuit.DIAMONDS, eRank.SEVEN));
-		rfHand.add(new Card(eSuit.DIAMONDS, eRank.QUEEN));
-		rfHand.add(new Card(eSuit.JOKER, eRank.JOKER));
 		rfHand.add(new Card(eSuit.SPADES, eRank.FIVE));
 		Hand h = Hand.EvalHand(rfHand);
 
@@ -290,7 +273,7 @@ public class TestHands {
 		assertEquals("Should be Two Pair:",
 				eHandStrength.TwoPair.getHandStrength(), h.getHandStrength());
 	}
-	
+
 	@Test
 	public final void TestTwoPair2() {
 
@@ -305,7 +288,7 @@ public class TestHands {
 		assertEquals("Should be Two Pair:",
 				eHandStrength.TwoPair.getHandStrength(), h.getHandStrength());
 	}
-	
+
 	@Test
 	public final void TestTwoPair3() {
 
@@ -335,7 +318,7 @@ public class TestHands {
 		assertEquals("Should be a Pair:", eHandStrength.Pair.getHandStrength(),
 				h.getHandStrength());
 	}
-	
+
 	@Test
 	public final void TestPair2() {
 
@@ -350,7 +333,7 @@ public class TestHands {
 		assertEquals("Should be a Pair:", eHandStrength.Pair.getHandStrength(),
 				h.getHandStrength());
 	}
-	
+
 	@Test
 	public final void TestPair3() {
 
@@ -365,7 +348,7 @@ public class TestHands {
 		assertEquals("Should be a Pair:", eHandStrength.Pair.getHandStrength(),
 				h.getHandStrength());
 	}
-	
+
 	@Test
 	public final void TestPair4() {
 
